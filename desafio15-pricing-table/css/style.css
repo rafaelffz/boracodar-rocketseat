@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+	--color-gray-50: #f8fafc;
+	--color-gray-100: #f1f5f9;
+	--color-gray-200: #e2e8f0;
+	--color-gray-300: #cbd5e1;
+	--color-gray-400: #94a3b8;
+	--color-gray-500: #64748b;
+	--color-gray-600: #475569;
+	--color-gray-700: #334155;
+	--color-gray-800: #1e293b;
+	--color-gray-900: #0f172a;
+	--color-green-100: #04d361;
+	--color-green-200: #1b873f;
+	--color-purple-100: #996dff;
+	--color-purple-200: #7c3aed;
+	--color-white: #ffffff;
+	--color-orange: #fba94c;
+}
+
+html, body {
+    background-color: var(--color-gray-50);
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.pricing-table {
+    display: grid;
+    gap: 24px;
+    padding: 24px;
+}
+
+section {
+    width: 320px;
+    margin: auto;
+}
+
+section .inner {
+    padding: 24px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    border: 1px solid var(--color-gray-200);
+}
+
+.title-price {
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-gray-800);
+}
+
+.inner p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-purple-200);
+}
+
+.title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37px;
+}
+
+.price {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.price strong {
+    font-size: 20px;
+}
+
+.primary {
+    background-color: transparent;
+    width: 100%;
+    padding: 16px;
+    color: var(--color-gray-800);
+    font-family: 'Titillium Web';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 4px;
+    border: 1px solid var(--color-gray-800);
+    margin-top: 16px;
+}
+
+.enterprise button {
+    margin-top: 32px;
+}
+
+.enterprise ul {
+    margin-top: 32px;
+    padding-top: 32px;
+}
+
+li i.ph-check {
+    color: var(--color-green-200);
+    font-size: 20px;
+}
+
+li i.ph-info {
+    font-size: 16px;
+    color: var(--color-gray-900);
+}
+
+ul {
+    list-style: none;
+    border-top: 1px solid var(--color-gray-200);
+    margin-top: 16px;
+    padding-top: 16px;
+    display: grid;
+    gap: 16px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+li span {
+    flex: 1;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.06em;
+    color: var(--color-gray-600);
+}
+
+section.best {
+    position: relative;
+    margin-top: 16px;
+}
+
+section.best::before {
+    content: "MAIS VANTAJOSO";
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #ffa500;
+    border-radius: 6px;
+    color: var(--color-gray-900);
+    padding: 8px 16px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -16px;
+}
+
+.ultimate .inner {
+    padding-top: 40px;
+    background-color: var(--color-gray-900);
+}
+
+.ultimate p {
+    color: var(--color-purple-100);
+}
+
+.ultimate .title, .ultimate .price {
+    color: var(--color-gray-50);
+}
+
+.ultimate button {
+    background-color: var(--color-purple-100);
+    color: #ffffff;
+}
+
+.ultimate ul {
+    border-color: var(--color-gray-700);
+}
+
+.ultimate span {
+    color: var(--color-gray-300);
+}
+
+.ultimate .ph-check {
+    color: var(--color-green-100);
+}
+
+.ultimate .ph-info {
+    color: var(--color-gray-500);
+}
+
+/* transition animation */
+
+section .inner:hover {
+    border-color: var(--color-purple-100);
+}
+
+section:hover {
+    transform: scale(1.05);
+}
+
+.inner button {
+    transition: 200ms;
+}
+
+section {
+    transition: transform 300ms;
+    animation: appear 400ms backwards var(--delay);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.primary:hover {
+    background-color: var(--color-gray-800);
+    color: #ffffff;
+}
+
+.ultimate button:hover {
+    background-color: var(--color-purple-200);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
