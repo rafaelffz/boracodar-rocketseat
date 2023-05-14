@@ -8,7 +8,6 @@ function filterContact() {
     let filterText = filterElement.value.toLowerCase().trim()
     
     contactWrappers.forEach(contactWrapper => {
-        let bool = false
         let hasContact = false
 
         contacts.forEach(contact => {
