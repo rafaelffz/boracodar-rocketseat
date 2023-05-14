@@ -1,37 +1,32 @@
 const filterElement = document.querySelector('header input')
-const contacts = document.querySelectorAll('.list-wrapper')
+const contactWrappers = document.querySelectorAll('.list-wrapper')
+const contacts = document.querySelectorAll('.person')
 
 filterElement.addEventListener('input', filterContact)
 
 function filterContact() {
-    if(filterElement.value != '') {
-        for(let contact of contacts) {
-            const names = contact.querySelectorAll('h3')
-            const filterText = filterElement.value.toLowerCase()
-            const people = document.querySelectorAll('.person')
-            
+    let filterText = filterElement.value.toLowerCase().trim()
+    
+    contactWrappers.forEach(contactWrapper => {
+        let bool = false
+        let hasContact = false
 
-            let bool = false
-            names.forEach(name => {
-                if(!name.textContent.toLowerCase().startsWith(filterText) && !bool) {
-                    // contact.style.display = 'none'
-                    contact.classList.add('none')
-                    for(let person of people) {
-                        person.classList.add('none')
-                    }
-                } else {
-                    // contact.style.display = 'flex'
-                    contact.classList.remove('none')
-                    contact.classList.add('flex')
-                    bool = true
+        contacts.forEach(contact => {
+            const name = contact.querySelector('h3').textContent.toLowerCase()
+            
+            if(name.includes(filterText)) {
+                contact.style.display = 'flex'
+                if(contactWrapper.contains(contact)) {
+                    hasContact = true
                 }
-            }) 
+            } else {
+                contact.style.display = 'none'
+            }
+        })
+        if(hasContact) {
+            contactWrapper.style.display = 'initial'
+        } else {
+            contactWrapper.style.display = 'none'
         }
-    } else {
-        for(let contact of contacts) {
-            // contact.style.display = 'flex'
-            contact.classList.remove('none')
-            contact.classList.add('flex')
-        }
-    }
+    })
 }

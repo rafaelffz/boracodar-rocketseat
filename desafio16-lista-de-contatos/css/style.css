@@ -12,13 +12,10 @@ html, body {
     overflow: hidden;
 }
 
-ul {
-    list-style: none;
-}
-
 body {
     color: #E1E1E6;
     background-color: #1A1924;
+    animation: fromTop .7s backwards;
 }
 
 header {
@@ -56,6 +53,11 @@ nav ul {
 
 nav ul li {
     font-size: 24px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
 }
 
 form {
@@ -107,7 +109,6 @@ form {
     display: flex;
     flex-direction: column;
     gap: 52px;
-
     height: 75vh;
     overflow-y: scroll;
 }
@@ -125,14 +126,13 @@ form {
     background-color: var(--color);
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
     border-radius: 8px;
-    margin-right: 52px;
+    display: grid;
+    place-items: center;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
 }
 
 .purple {
@@ -155,7 +155,15 @@ form {
     --color: #B38C00;
 }
 
+.people {
+    padding-left: 92px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
 .person {
+    display: flex;
     gap: 16px;
 }
 
@@ -180,10 +188,9 @@ form {
     margin-top: 4px;
 }
 
-.list-wrapper ul {
-    display: flex;
-    flex-direction: column;
+.list-wrapper {
     gap: 32px;
+    position: relative;
 }
 
 header nav,
@@ -192,4 +199,14 @@ header form,
     max-width: 350px;
     width: 100%;
     margin-inline: auto;
+}
+
+@keyframes fromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    } to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
