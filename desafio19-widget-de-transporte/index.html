@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 19 #boraCodar - Widget de Transporte</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="bar"></div>
+        
+        <div class="text">
+            <h1>Encontre <span>Boris</span> no local de partida</h1>
+            <p>Chega em 3 minutos (800 metros)</p>
+        </div>
+
+
+        <div class="info">
+            <div class="details-driver">
+                <img class="image-driver" src="./assets/image-driver.png" alt="">
+
+                <div class="star-bar">
+                    <i class="ph-fill ph-star"></i>
+                    <span>5.0</span>
+                </div>
+
+                <div class="name">
+                    <p>Boris C.</p>
+                </div>
+
+                <div class="car">
+                    <img class="image-car" src="./assets/image-car.png" alt="">
+                </div>
+            </div>
+
+            <div class="car-model">
+                <h1>BCD0D19</h1>
+                <p>Honda Civic Roxo</p>
+            </div>
+        </div>
+
+        <div class="chat">
+            <div class="input-wrapper">
+                <form>
+                    <label class="sr-only" for="send-message">Enviar mensagem para o motorista</label>
+                    <input id="send-message" type="text" placeholder="Enviar mensagem para Boris...">
+                    <button type="reset">
+                        <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </button>
+                </form>
+            </div>
+            <div class="chat-icons">
+                <i class="ph-fill ph-phone"></i>
+                <i class="ph-fill ph-shield-plus"></i>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
