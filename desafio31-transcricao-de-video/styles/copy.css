@@ -12,6 +12,7 @@ button.copy {
 
   border-radius: 0.5rem;
   background: var(--surface-secondary, #1F2937);
+  overflow: hidden;
 }
 
 button.copy:hover {
@@ -23,8 +24,33 @@ button.copy:hover {
   animation: appear 400ms;
 }
 
+.ph-check-circle {
+  animation: downToCenter 300ms ease-out;
+}
+
+.copied {
+  animation: centerToUp 150ms ease-out;
+}
+
 @keyframes appear {
   from {
     opacity: 0;
+  }
+}
+
+@keyframes centerToUp {
+  from {
+    transform: translateY(0);
+  } to {
+    transform: translateY(-200%);
+  }
+}
+
+@keyframes downToCenter {
+  from {
+    transform: translateY(150%);
+    opacity: 0;
+  } to {
+    transform: translateY(0%);
   }
 }
